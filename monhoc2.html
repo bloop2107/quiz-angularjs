@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-4" ng-repeat="item in list_subject">
+      <!-- Card Light -->
+      <!-- Card -->
+      <div class="card">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="images/logos/{{item.Logo}}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">{{item.Name}}</h4>
+          <!-- Text -->
+          <p class="card-text">Some quick example text to build </p>
+          <!-- Button -->
+          <a href="#!quiz/{{item.Id}}/{{item.Name}}" class="btn btn-primary">Test now</a>
+
+        </div>
+
+      </div>
+<!-- Card -->
+<!-- Card Light -->
+    </div>
+    
+  </div>

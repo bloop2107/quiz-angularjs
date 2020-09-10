@@ -1,0 +1,60 @@
+ 
+
+ <!-- Collapse buttons -->
+ <div class="d-flex justify-content-center" ng-show="!inProgess">
+    <a class="btn btn-primary" ng-click="start()">
+      Bắt đầu kiểm tra
+    </a>
+ </div>   
+ <div ng-show="quizOver"> 
+
+  <h1 class="d-flex justify-content-center">Điểm của bạn là {{score}}/10</h1>
+  <div class="d-flex justify-content-center" >
+    <a class="btn btn-primary" ng-click="reset()">
+      TEST AGAIN
+    </a>
+  </div> 
+ </div>
+   
+    <div class="mt-3" ng-show="inProgess">
+      <div ng-show="!quizOver">
+        <h2 class="text-center">{{subjectName}}</h2>
+      <div class="row">
+        <!-- Group of material radios - option 1 -->
+        <div class="card col" >
+          <div class="card-header" style="display: flex;">
+            <h1>Quiz 1:</h1>
+            <div style="margin-left: 150px;">
+              <span class="btn btn-outline-primary waves-effect"><i class="pr-2 " aria-hidden="true"></i>{{id}}/10</span>
+              <button type="button" class="btn btn-outline-success waves-effect">Score {{score}}/10</button>
+            </div>
+          </div>
+            
+          
+          <div class="card-body">
+            <div class="card-title">
+              <h5>{{question}}</h5>
+            </div>
+            <div class="form-check" ng-repeat="option in options">
+              <input type="radio" value="{{option.Id}}" class="form-check-input" id="materialGroupExample1" name="answer">
+              <label class="form-check-label" for="materialGroupExample1">{{option.Text}}</label>
+            </div>
+          </div>  
+          <div class="card-footer">
+            <div ng-show="answerMode">
+              <!-- <a href="#" class="btn btn-primary" ng-click="checkAnswer()">SUBMIT</a> -->
+              <button class="btn btn-primary" ng-click="checkAnswer()">SUBMIT</button>
+            </div>
+            <div ng-show="!answerMode">
+             <button class="btn btn-primary"  ng-click="nextQuestion()">NEXT</button>
+             <span ng-show="correctAns" class="badge badge-success">Correct</span>
+             <span ng-show="!correctAns" class="badge badge-danger">In Correct</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+      
+    </div>
+  
